@@ -55,7 +55,7 @@ module Bitmex
           }.delete_if { |_, v| v.nil? }
           @connection.post('/api/v1/order/closePosition', options).body
         end
-         
+
         # @see https://www.bitmex.com/api/explorer/#!/Trade/Trade_getBucketed
         def trade_bucketed(bin_size = '1m', options = {})
           @connection.get('/api/v1/trade/bucketed', { binSize: bin_size }.merge(options)).body
@@ -84,6 +84,10 @@ module Bitmex
         # @see https://www.bitmex.com/api/explorer/#!/User/User_getWalletSummary
         def user_wallet_summary(currency = 'XBt')
           @connection.get('/api/v1/user/walletSummary', { currency: currency }).body
+        end
+
+        def user_margin(currency = 'XBt')
+          @connection.get('/api/v1/user/margin', { currency: currency }).body
         end
       end
     end
