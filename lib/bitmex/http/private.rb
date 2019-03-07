@@ -48,7 +48,7 @@ module Bitmex
         end
 
         def position_isolate(symbol, enabled)
-          @connection.get('/api/v1/position/isolate', { symbol: symbol, enabled: enabled }).body
+          @connection.post('/api/v1/position/isolate', { symbol: symbol, enabled: enabled }).body
         end
 
         # @see https://www.bitmex.com/api/explorer/#!/Order/Order_closePosition
