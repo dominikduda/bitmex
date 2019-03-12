@@ -26,7 +26,7 @@ module Bitmex
   end
 end
 
-class BitmexError < BitmexError; end
+class BitmexError < StandardError; end
 class Bitmex::BadRequest < BitmexError; end
 class Bitmex::NotFound < BitmexError; end
 class Bitmex::TooManyRequests < BitmexError; end
