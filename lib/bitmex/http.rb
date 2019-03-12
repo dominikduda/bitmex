@@ -26,10 +26,11 @@ module Bitmex
   end
 end
 
-class Bitmex::BadRequest < StandardError; end
-class Bitmex::NotFound < StandardError; end
-class Bitmex::TooManyRequests < StandardError; end
-class Bitmex::InternalServerError < StandardError; end
-class Bitmex::BadGateway < StandardError; end
-class Bitmex::ServiceUnavailable < StandardError; end
-class Bitmex::GatewayTimeout < StandardError; end
+class BitmexError < BitmexError; end
+class Bitmex::BadRequest < BitmexError; end
+class Bitmex::NotFound < BitmexError; end
+class Bitmex::TooManyRequests < BitmexError; end
+class Bitmex::InternalServerError < BitmexError; end
+class Bitmex::BadGateway < BitmexError; end
+class Bitmex::ServiceUnavailable < BitmexError; end
+class Bitmex::GatewayTimeout < BitmexError; end
