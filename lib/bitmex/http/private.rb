@@ -51,6 +51,10 @@ module Bitmex
           @connection.post('/api/v1/position/isolate', { symbol: symbol, enabled: enabled })
         end
 
+        def position_leverage(symbol, leverage)
+          @connection.post('/api/v1/position/leverage', { symbol: symbol, leverage: leverage })
+        end
+
         # @see https://www.bitmex.com/api/explorer/#!/Order/Order_closePosition
         def close_position(symbol, price = nil)
           options = {
